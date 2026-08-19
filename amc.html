@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore BP Bernstein's Actively Managed Certificate — an actively managed, JSE-listed investment structure built around disciplined portfolio construction.">
+  <meta name="theme-color" content="#061427">
+  <title>Actively Managed Certificate | BP Bernstein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.46.0/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/amc.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <span class="page-loader__line"></span>
+    <span class="page-loader__brand"><b>bp</b>bernstein</span>
+  </div>
+
+  <header class="amc-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="BP Bernstein home">
+      <span class="brand__name"><span>bp</span>bernstein</span>
+      <span class="brand__line">Member of the JSE</span>
+    </a>
+    <nav class="amc-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a class="is-active" href="amc.html" aria-current="page">AMC</a>
+      <a href="open-account.html">Open an Account</a>
+      <a href="legal.html">Legal</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="news.html">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="button button--red button--header magnetic" type="button" data-open-dialog>Speak to an advisor</button>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__top">
+      <a class="brand" href="index.html" aria-label="BP Bernstein home">
+        <span class="brand__name"><span>bp</span>bernstein</span>
+        <span class="brand__line">Member of the JSE</span>
+      </a>
+      <button class="mobile-menu__close" type="button" aria-label="Close navigation"><i class="ti ti-x" aria-hidden="true"></i></button>
+    </div>
+    <nav aria-label="Mobile navigation">
+      <a href="index.html"><span>01</span> Home</a>
+      <a href="services.html"><span>02</span> Services</a>
+      <a class="is-active" href="amc.html" aria-current="page"><span>03</span> AMC</a>
+      <a href="open-account.html"><span>04</span> Open an Account</a>
+      <a href="legal.html"><span>05</span> Legal</a>
+      <a href="disclaimer.html"><span>06</span> Disclaimer</a>
+      <a href="news.html"><span>07</span> News</a>
+      <a href="#contact"><span>08</span> Contact</a>
+    </nav>
+    <button class="button button--red" type="button" data-open-dialog>Speak to an advisor <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button>
+  </aside>
+
+  <main id="main-content">
+    <section class="amc-hero" id="top" aria-labelledby="heroTitle">
+      <img class="amc-hero__image" src="images/amc-market-hero.png" alt="Abstract institutional market charts and financial data visualisation" fetchpriority="high">
+      <div class="amc-hero__shade" aria-hidden="true"></div>
+      <div class="amc-hero__inner">
+        <div class="amc-hero__copy">
+          <p class="eyebrow">Actively managed investing</p>
+          <h1 id="heroTitle">
+            <span class="reveal-line"><span>Actively Managed</span></span>
+            <span class="reveal-line"><span>Certificate</span></span>
+          </h1>
+          <p class="amc-hero__lead">BP Bernstein's AMC combines active strategy, disciplined portfolio construction, and long-term capital growth.</p>
+          <div class="amc-hero__actions">
+            <a class="button button--red" href="#overview">Explore AMC <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></a>
+            <button class="button button--outline-light magnetic" type="button" data-open-dialog>Speak to an advisor</button>
+          </div>
+        </div>
+
+        <article class="market-panel" aria-label="Illustrative AMC strategy dashboard">
+          <header class="market-panel__header">
+            <strong>BPB AMC</strong>
+            <span><i></i> Illustrative overview</span>
+          </header>
+          <div class="market-panel__performance">
+            <div><span>Strategy framework</span><strong>Active oversight</strong><small>Illustrative visual — not performance data</small></div>
+            <canvas id="heroChart" width="330" height="92" aria-label="Illustrative strategy line chart"></canvas>
+          </div>
+          <div class="allocation" aria-label="Illustrative asset categories">
+            <strong>Portfolio building blocks</strong>
+            <div><span>Equity</span><i><b style="--allocation:.72"></b></i></div>
+            <div><span>Preference Shares</span><i><b style="--allocation:.46"></b></i></div>
+            <div><span>Cash &amp; Income</span><i><b style="--allocation:.31"></b></i></div>
+            <div><span>Alternatives</span><i><b style="--allocation:.18"></b></i></div>
+          </div>
+          <dl class="market-panel__metrics">
+            <div><dt>Research</dt><dd>Led</dd></div>
+            <div><dt>Risk</dt><dd>Managed</dd></div>
+            <div><dt>Active</dt><dd>Management</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="trust-strip" aria-label="AMC trust indicators">
+        <div><i class="ti ti-rosette-discount-check" aria-hidden="true"></i><span>JSE aligned</span></div>
+        <div><i class="ti ti-shield-check" aria-hidden="true"></i><span>Risk managed</span></div>
+        <div><i class="ti ti-chart-pie" aria-hidden="true"></i><span>Diversified exposure</span></div>
+        <div><i class="ti ti-chart-line" aria-hidden="true"></i><span>Active oversight</span></div>
+      </div>
+    </section>
+
+    <section class="overview reveal" id="overview" aria-labelledby="overviewTitle">
+      <div class="section-shell overview__grid">
+        <div class="overview__copy">
+          <p class="eyebrow">Overview</p>
+          <h2 id="overviewTitle">Active. Disciplined. Aligned.</h2>
+          <div id="infoPanel" aria-live="polite">
+            <p>An Actively Managed Certificate (AMC) is a listed investment that provides access to a professionally managed portfolio of shares and income-generating assets on the JSE.</p>
+            <p>We combine market research, active stock selection and disciplined risk management to identify opportunities and navigate market cycles with confidence.</p>
+            <p>The structure is designed to offer transparent market access while keeping long-term investor outcomes in focus.</p>
+          </div>
+          <dl class="quick-metrics">
+            <div><i class="ti ti-chart-dots" aria-hidden="true"></i><dt>Actively managed</dt><dd>Research-led portfolio management</dd></div>
+            <div><i class="ti ti-building-bank" aria-hidden="true"></i><dt>JSE access</dt><dd>A listed investment structure</dd></div>
+            <div><i class="ti ti-shield-heart" aria-hidden="true"></i><dt>Investor focused</dt><dd>Aligned with long-term objectives</dd></div>
+          </dl>
+        </div>
+
+        <nav class="info-nav" aria-label="AMC information topics">
+          <button class="is-active" type="button" data-topic="general">General Information</button>
+          <button type="button" data-topic="corporate">Corporate Actions</button>
+          <button type="button" data-topic="preference">Preference Shares</button>
+          <button type="button" data-topic="ordinary">Ordinary Shares</button>
+          <button type="button" data-topic="definitions">Financial &amp; Economic Definitions</button>
+          <button type="button" data-topic="products">Other Investment Products</button>
+          <button type="button" data-topic="strategy">Investment Strategic Actions</button>
+        </nav>
+
+        <aside class="advisor-card">
+          <h2>How can we help?</h2>
+          <p>Our investment specialists are ready to help you invest with confidence.</p>
+          <button class="button button--red" type="button" data-open-dialog>Get in touch <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button>
+          <address>
+            <a href="tel:+27114793400"><i class="ti ti-phone" aria-hidden="true"></i>+27 (0) 11 479 3400</a>
+            <a href="mailto:amy@bpbernstein.co.za"><i class="ti ti-mail" aria-hidden="true"></i>amy@bpbernstein.co.za</a>
+            <span><i class="ti ti-clock" aria-hidden="true"></i>Mon – Fri: 8:00 – 17:00</span>
+          </address>
+        </aside>
+      </div>
+    </section>
+
+    <section class="benefits" aria-labelledby="benefitsTitle">
+      <div class="section-shell">
+        <p class="eyebrow reveal">Why invest in our AMC</p>
+        <h2 class="reveal" id="benefitsTitle">Key benefits for modern investors</h2>
+        <div class="benefit-grid">
+          <article class="benefit-card reveal" data-delay="0"><i class="ti ti-target-arrow" aria-hidden="true"></i><b></b><h3>Active Management</h3><p>Our experienced team actively researches and selects securities to uncover opportunities.</p></article>
+          <article class="benefit-card reveal" data-delay="80"><i class="ti ti-chart-pie-2" aria-hidden="true"></i><b></b><h3>Diversified Exposure</h3><p>Access a diversified portfolio across equities, preference shares and income assets.</p></article>
+          <article class="benefit-card reveal" data-delay="160"><i class="ti ti-building-bank" aria-hidden="true"></i><b></b><h3>Market Access</h3><p>A JSE-listed structure provides liquidity, transparency and efficient market access.</p></article>
+          <article class="benefit-card reveal" data-delay="240"><i class="ti ti-shield-check" aria-hidden="true"></i><b></b><h3>Risk Discipline</h3><p>Robust risk frameworks are designed to protect capital through market cycles.</p></article>
+          <article class="benefit-card reveal" data-delay="320"><i class="ti ti-clipboard-text" aria-hidden="true"></i><b></b><h3>Transparent Structure</h3><p>Clear reporting, regular disclosure and alignment with investor interests.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" aria-labelledby="approachTitle">
+      <div class="section-shell approach__grid">
+        <div>
+          <p class="eyebrow reveal">How we invest</p>
+          <h2 class="reveal" id="approachTitle">Our investment approach</h2>
+          <ol class="process">
+            <li class="reveal" data-delay="0"><span>01</span><i class="ti ti-search" aria-hidden="true"></i><h3>Research &amp; Insight</h3><p>We analyse markets, companies and data to identify high-conviction opportunities.</p></li>
+            <li class="reveal" data-delay="170"><span>02</span><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i><h3>Active Allocation</h3><p>We build diversified portfolios focused on risk-adjusted returns.</p></li>
+            <li class="reveal" data-delay="340"><span>03</span><i class="ti ti-device-desktop-analytics" aria-hidden="true"></i><h3>Ongoing Monitoring</h3><p>We continuously monitor positions and market conditions.</p></li>
+            <li class="reveal" data-delay="510"><span>04</span><i class="ti ti-shield-check" aria-hidden="true"></i><h3>Risk Review</h3><p>We review exposure to protect capital and support long-term outcomes.</p></li>
+          </ol>
+        </div>
+        <article class="growth-chart reveal">
+          <h3>Long-term growth through active management</h3>
+          <div class="growth-chart__legend"><span><i></i> Active strategy</span><span><i></i> Market benchmark</span></div>
+          <canvas id="growthChart" width="520" height="220" aria-label="Illustrative comparison of an active strategy and market benchmark"></canvas>
+          <p>Illustrative visual only. Not actual performance data. Past performance is not indicative of future results.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="strategy-statement" aria-labelledby="strategyTitle">
+      <div class="strategy-statement__lead">
+        <p class="eyebrow">Insight</p>
+        <h2 id="strategyTitle">Strategy-led investing.<br>Purpose-built for<br>modern wealth creation.</h2>
+        <i class="ti ti-target-arrow" aria-hidden="true"></i>
+      </div>
+      <div class="principles">
+        <article><i class="ti ti-chart-bar" aria-hidden="true"></i><h3>Active by design</h3><p>We don't track the market. We actively manage opportunity.</p></article>
+        <article><i class="ti ti-shield-check" aria-hidden="true"></i><h3>Risk aware</h3><p>Protecting capital is as important as growing it.</p></article>
+        <article><i class="ti ti-target-arrow" aria-hidden="true"></i><h3>Aligned outcomes</h3><p>Our success is tied to long-term client outcomes.</p></article>
+      </div>
+    </section>
+
+    <section class="amc-insights" id="insights" aria-labelledby="insightsTitle">
+      <div class="section-shell amc-insights__grid">
+        <div class="amc-insights__intro">
+          <p class="eyebrow">Our blog</p>
+          <h2 id="insightsTitle">Insights &amp; market perspectives</h2>
+          <a class="button button--outline-dark" href="news.html">View all news <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="article-grid">
+          <article><a href="article.html?article=independent-thinking-changing-markets"><span><img src="images/insight-johannesburg.png" alt="Johannesburg financial district architecture" loading="lazy"></span><small>Markets</small><h3>Independent thinking in changing markets</h3><b>Read more <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></b></a></article>
+          <article><a href="article.html?article=planning-disciplined-market-insight"><span><img src="images/equity-trading.png" alt="Institutional market screens" loading="lazy"></span><small>Portfolio strategy</small><h3>Planning with disciplined market insight</h3><b>Read more <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></b></a></article>
+          <article><a href="article.html?article=global-diversification-still-matters"><span><img src="images/insight-offshore.png" alt="Cape Town and Table Mountain" loading="lazy"></span><small>Wealth</small><h3>Why diversified access still matters</h3><b>Read more <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></b></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-cta" aria-labelledby="brandCtaTitle">
+      <h2 id="brandCtaTitle">Integrity, Trust, Loyalty, <em>Relationships</em></h2>
+      <button class="button button--red" type="button" data-open-dialog>Let's work together <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer__grid">
+      <section class="footer__about" aria-label="About BP Bernstein">
+        <a class="brand brand--footer" href="index.html" aria-label="BP Bernstein home"><span class="brand__name"><span>bp</span>bernstein</span><span class="brand__line">Member of the JSE</span></a>
+        <p>Established nearly 60 years ago, BP Bernstein is a member of the JSE Limited and one of the oldest independent stockbroking firms in South Africa.</p>
+        <p class="footer__regulatory">BP Bernstein is a JSE member for Equities and Authorised JSE Investments, and an authorised Financial Services Provider (FSP 40810) for CFDs and offshore investments.</p>
+      </section>
+      <nav class="footer__links" aria-label="Useful links"><h2>Useful links</h2><a href="index.html">About</a><a href="open-account.html">Open an Account</a><a href="services.html">Services</a><a href="#contact">Ask an Expert</a><a href="https://secure.bpbernstein.co.za/" target="_blank" rel="noopener">Portal</a><a href="#contact">Contact</a></nav>
+      <section class="footer__contact" aria-labelledby="contactTitle"><h2 id="contactTitle">Get in touch</h2><address><p><i class="ti ti-map-pin" aria-hidden="true"></i><span>Unit 7, 1 Parade on Kloof,<br>Bedfordview, Johannesburg,<br>South Africa</span></p><a href="tel:+27114793400"><i class="ti ti-phone" aria-hidden="true"></i>+27 (0) 11 479 3400</a><p><i class="ti ti-device-landline-phone" aria-hidden="true"></i>+27 (0) 11 479 3411</p><a href="mailto:amy@bpbernstein.co.za"><i class="ti ti-mail" aria-hidden="true"></i>amy@bpbernstein.co.za</a></address></section>
+      <section class="newsletter" aria-labelledby="newsletterTitle"><h2 id="newsletterTitle">Newsletter</h2><p>Signup for our latest insights.</p><form id="newsletterForm" novalidate><label class="sr-only" for="newsletterEmail">Email address</label><input id="newsletterEmail" name="email" type="email" autocomplete="email" placeholder="Enter your email address" required><button type="submit" aria-label="Subscribe to newsletter"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button></form><p class="form-message" id="newsletterMessage" role="status" aria-live="polite"></p><div class="socials" aria-label="Social media"><a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a><a href="#" aria-label="X / Twitter"><i class="ti ti-brand-x" aria-hidden="true"></i></a><a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a></div></section>
+    </div>
+    <div class="footer__bottom" id="legal"><p>Copyright © 2022 BP Bernstein. All Rights Reserved</p><nav aria-label="Legal links"><a href="disclaimer.html">Disclaimer</a><a href="legal.html#documents">Terms &amp; Conditions</a><a href="https://www.bpbernstein.co.za/uploads/bp-bernstein-privacy-statement.pdf" target="_blank" rel="noopener">Privacy Policy</a></nav></div>
+  </footer>
+
+  <dialog class="account-dialog" id="accountDialog" aria-labelledby="dialogTitle">
+    <button class="account-dialog__close" type="button" aria-label="Close enquiry"><i class="ti ti-x" aria-hidden="true"></i></button>
+    <p class="eyebrow">Start a conversation</p><h2 id="dialogTitle">Speak to an advisor</h2><p>Leave your details and a BP Bernstein adviser will contact you.</p>
+    <form id="accountForm"><label for="accountName">Full name</label><input id="accountName" name="name" type="text" autocomplete="name" required><label for="accountEmail">Email address</label><input id="accountEmail" name="email" type="email" autocomplete="email" required><button class="button button--red" type="submit">Send enquiry <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button><p class="form-message" id="accountMessage" role="status" aria-live="polite"></p></form>
+  </dialog>
+  <script src="js/amc.js"></script>
+</body>
+</html>

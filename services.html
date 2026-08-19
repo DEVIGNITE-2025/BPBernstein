@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore BP Bernstein's equity trading, CFD trading, offshore investment and exchange-traded investment services.">
+  <meta name="theme-color" content="#071526">
+  <title>Services | BP Bernstein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.46.0/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="ticker" aria-label="Market overview">
+    <div class="ticker__track" id="marketTicker"></div>
+    <p class="ticker__notice">Market data delayed by 15 min</p>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="BP Bernstein home">
+      <span class="brand__name"><span>bp</span>bernstein</span>
+      <span class="brand__line">Member of the JSE</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a class="is-active" href="#services" aria-current="page">Services</a>
+      <a href="amc.html">AMC</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="news.html">Insights</a>
+      <a href="#approach">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="button button--outline button--compact" href="https://secure.bpbernstein.co.za/" target="_blank" rel="noopener">Client Portal</a>
+      <a class="button button--red button--compact" href="open-account.html">Open an Account</a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__top">
+      <a class="brand" href="index.html" aria-label="BP Bernstein home">
+        <span class="brand__name"><span>bp</span>bernstein</span>
+        <span class="brand__line">Member of the JSE</span>
+      </a>
+      <button class="mobile-menu__close" type="button" aria-label="Close navigation"><i class="ti ti-x" aria-hidden="true"></i></button>
+    </div>
+    <nav aria-label="Mobile navigation">
+      <a href="index.html"><span>01</span> Home</a>
+      <a href="#services"><span>02</span> Services</a>
+      <a href="amc.html"><span>03</span> AMC</a>
+      <a href="disclaimer.html"><span>04</span> Disclaimer</a>
+      <a href="news.html"><span>05</span> Insights</a>
+      <a href="#approach"><span>06</span> About</a>
+      <a href="#contact"><span>07</span> Contact</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a class="button button--outline" href="https://secure.bpbernstein.co.za/" target="_blank" rel="noopener">Client Portal</a>
+      <a class="button button--red" href="open-account.html">Open an Account</a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero__media" aria-hidden="true">
+        <img class="hero__image" src="images/services-hero-architecture.png" alt="" fetchpriority="high">
+      </div>
+
+      <div class="hero__rail" aria-hidden="true">
+        <span class="hero__rail-line"></span>
+        <span class="hero__rail-copy">Our expertise</span>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow">Our services</p>
+        <h1 id="heroTitle">
+          <span class="hero-title__line"><span>Tailored strategies.</span></span>
+          <span class="hero-title__line"><span>Proven <em>results.</em></span></span>
+        </h1>
+        <p class="hero__summary">Institutional strength. Personal approach.<br>Solutions built around your goals.</p>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="serviceHeading">
+      <div class="service-selector" role="tablist" aria-label="Select a service">
+        <button class="service-tab is-active" id="service-tab-1" type="button" role="tab" aria-selected="true" aria-controls="servicePanel" tabindex="0" data-service="0">
+          <span class="service-tab__number">01</span><span class="service-tab__label">Equity Trading</span><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="service-tab" id="service-tab-2" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="1">
+          <span class="service-tab__number">02</span><span class="service-tab__label">CFD Trading</span><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="service-tab" id="service-tab-3" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="2">
+          <span class="service-tab__number">03</span><span class="service-tab__label">Offshore Investments</span><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="service-tab" id="service-tab-4" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="3">
+          <span class="service-tab__number">04</span><span class="service-tab__label">ETN’s</span><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="service-tab" id="service-tab-5" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="4">
+          <span class="service-tab__number">05</span><span class="service-tab__label">ETF’s</span><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="service-tab" id="service-tab-6" type="button" role="tab" aria-selected="false" aria-controls="servicePanel" tabindex="-1" data-service="5">
+          <span class="service-tab__number">06</span><span class="service-tab__label">Satrix</span><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <article class="service-panel" id="servicePanel" role="tabpanel" aria-labelledby="service-tab-1" tabindex="0">
+        <div class="service-panel__copy" id="serviceCopy">
+          <p class="service-panel__number" id="serviceNumber">01</p>
+          <h2 id="serviceHeading">Equity Trading</h2>
+          <span class="service-panel__rule" aria-hidden="true"></span>
+          <p class="service-panel__description" id="serviceDescription">We provide direct market access to local and global equity markets. Our experienced dealers and research team deliver insight, execution and support to help you make informed decisions.</p>
+          <ul class="benefits" id="serviceBenefits">
+            <li><span class="benefit-icon"><i class="ti ti-check" aria-hidden="true"></i></span><span>Direct access to the JSE and major global markets</span></li>
+            <li><span class="benefit-icon"><i class="ti ti-check" aria-hidden="true"></i></span><span>Specialist research and sector insight</span></li>
+            <li><span class="benefit-icon"><i class="ti ti-check" aria-hidden="true"></i></span><span>Competitive pricing and execution</span></li>
+            <li><span class="benefit-icon"><i class="ti ti-check" aria-hidden="true"></i></span><span>Personalised dealing and relationship support</span></li>
+          </ul>
+          <a class="editorial-link" id="serviceLink" href="#contact">Explore Equity Trading <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="service-panel__media" id="serviceMedia">
+          <img id="serviceImage" src="images/equity-trading.png" alt="Professional institutional equity trading workstation" loading="lazy">
+        </div>
+      </article>
+    </section>
+
+    <section class="approach reveal" id="approach" aria-labelledby="approachTitle">
+      <div class="approach__intro">
+        <p class="eyebrow">Our approach</p>
+        <h2 id="approachTitle">More than<br>services.<br><em>Partnerships.</em></h2>
+      </div>
+      <div class="approach__values">
+        <article class="value">
+          <i class="ti ti-shield-check value__icon" aria-hidden="true"></i>
+          <h3>Independent</h3>
+          <p>We are proudly independent, allowing us to act in your best interests.</p>
+        </article>
+        <article class="value">
+          <i class="ti ti-target-arrow value__icon" aria-hidden="true"></i>
+          <h3>Focused</h3>
+          <p>We focus on what matters most — your goals, your future, your success.</p>
+        </article>
+        <article class="value">
+          <i class="ti ti-users value__icon" aria-hidden="true"></i>
+          <h3>Experienced</h3>
+          <p>Decades of combined experience across local and global markets.</p>
+        </article>
+        <article class="value">
+          <i class="ti ti-diamond value__icon" aria-hidden="true"></i>
+          <h3>Committed</h3>
+          <p>We are committed to building long-term relationships.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta reveal" aria-labelledby="ctaTitle">
+      <div class="cta__heading">
+        <span class="cta__rule" aria-hidden="true"></span>
+        <h2 id="ctaTitle">Let’s build your<br>next <em>opportunity.</em></h2>
+      </div>
+      <button class="button button--cta" type="button" data-open-dialog>Let’s talk <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer__grid">
+      <section class="footer__about" aria-label="About BP Bernstein">
+        <a class="brand brand--footer" href="index.html" aria-label="BP Bernstein home">
+          <span class="brand__name"><span>bp</span>bernstein</span>
+          <span class="brand__line">Member of the JSE</span>
+        </a>
+        <p>Established nearly 60 years ago, BP Bernstein is a member of the JSE Limited and one of the oldest independent stockbroking firms in South Africa.</p>
+        <p>Since the early 1950’s both private investors and institutions have relied on BP Bernstein to help them identify and capitalise on financial opportunities.</p>
+        <p class="footer__regulatory">BP Bernstein is a JSE member for Equities and Authorised JSE Investments, and an authorised Financial Services Provider (FSP 40810) for CFDs and offshore investments.</p>
+      </section>
+
+      <nav class="footer__links" aria-label="Useful links">
+        <h2>Useful links</h2>
+        <a href="#approach"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>About</a>
+        <a href="open-account.html"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Open an Account</a>
+        <a href="#services"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Services</a>
+        <a href="#contact"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Ask an Expert</a>
+        <a href="https://secure.bpbernstein.co.za/" target="_blank" rel="noopener"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Portal</a>
+        <a href="#contact"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Contact</a>
+      </nav>
+
+      <section class="footer__contact" aria-labelledby="contactTitle">
+        <h2 id="contactTitle">Get in touch</h2>
+        <address>
+          <p><i class="ti ti-map-pin" aria-hidden="true"></i><span>Unit 7, 1 Parade on Kloof,<br>Bedfordview, Johannesburg,<br>South Africa</span></p>
+          <a href="tel:+27114793400"><i class="ti ti-phone" aria-hidden="true"></i><span>+27 (0) 11 479 3400</span></a>
+          <p><i class="ti ti-device-landline-phone" aria-hidden="true"></i><span>+27 (0) 11 479 3411</span></p>
+          <a href="mailto:amy@bpbernstein.co.za"><i class="ti ti-mail" aria-hidden="true"></i><span>amy@bpbernstein.co.za</span></a>
+        </address>
+      </section>
+
+      <section class="newsletter" aria-labelledby="newsletterTitle">
+        <h2 id="newsletterTitle">Newsletter</h2>
+        <p>Signup for our latest insights.</p>
+        <form id="newsletterForm" novalidate>
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input id="newsletterEmail" name="email" type="email" autocomplete="email" placeholder="Enter your email address" required>
+          <button type="submit" aria-label="Subscribe to newsletter"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button>
+        </form>
+        <p class="form-message" id="newsletterMessage" role="status" aria-live="polite"></p>
+        <div class="socials" aria-label="Social media">
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="ti ti-brand-x" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer__bottom">
+      <p>Copyright © 2022 BP Bernstein. All Rights Reserved</p>
+      <nav aria-label="Legal links">
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="legal.html#documents">Terms &amp; Conditions</a>
+        <a href="https://www.bpbernstein.co.za/uploads/bp-bernstein-privacy-statement.pdf" target="_blank" rel="noopener">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <dialog class="account-dialog" id="accountDialog" aria-labelledby="dialogTitle">
+    <button class="account-dialog__close" type="button" aria-label="Close enquiry"><i class="ti ti-x" aria-hidden="true"></i></button>
+    <p class="eyebrow">Start a conversation</p>
+    <h2 id="dialogTitle">Open an Account</h2>
+    <p>Leave your details and a BP Bernstein adviser will contact you.</p>
+    <form id="accountForm">
+      <label for="accountName">Full name</label>
+      <input id="accountName" name="name" type="text" autocomplete="name" required>
+      <label for="accountEmail">Email address</label>
+      <input id="accountEmail" name="email" type="email" autocomplete="email" required>
+      <button class="button button--red" type="submit">Send enquiry <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button>
+      <p class="form-message" id="accountMessage" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

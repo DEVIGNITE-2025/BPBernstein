@@ -54,9 +54,9 @@
   });
 
   const team = [
-    { name: 'Amy Schultz', role: 'Investment Specialist', bio: 'Bringing experienced market perspective and attentive personal service to every client relationship.', image: 'images/team-amy-schultz.png' },
-    { name: 'Investment Adviser', role: 'Portfolio Strategy', bio: 'Focused on practical investment solutions, disciplined portfolio thinking and long-term client outcomes.', image: 'images/team-adviser-02.png' },
-    { name: 'Senior Adviser', role: 'Equity Markets', bio: 'Combining research-led insight with responsive dealing support across local and global markets.', image: 'images/team-adviser-03.png' }
+    { name: 'Ina Sturino', role: 'Portfolio Strategy', bio: 'Focused on practical investment solutions, disciplined portfolio thinking and long-term client outcomes.', image: 'images/team-adviser-02.png' },
+    { name: 'Francesco Sturino', role: 'Equity Markets', bio: 'Combining research-led insight with responsive dealing support across local and global markets.', image: 'images/team-adviser-03.png' },
+    { name: 'Amy Schultz', role: 'Investment Specialist', bio: 'Bringing experienced market perspective and attentive personal service to every client relationship.', image: 'images/team-amy-schultz.png' }
   ];
   let activeTeam = 0;
   const portrait = document.querySelector('#teamPortrait');

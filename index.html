@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.46.0/dist/tabler-icons.min.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -93,7 +94,7 @@
         <div class="section-shell heritage__inner">
           <div class="section-intro">
             <span class="eyebrow">Established for impact</span>
-            <h2 id="heritageTitle">Six decades of<br><em>integrity</em> and insight.</h2>
+            <h2 id="heritageTitle">Six decades of<br><em>integrity</em><br>and insight.</h2>
           </div>
           <dl class="metrics">
             <div><dt>60+</dt><dd>Years of<br>experience</dd></div>
@@ -129,7 +130,7 @@
         <div class="section-shell home-values__inner">
           <div>
             <span class="eyebrow">What hasn’t changed</span>
-            <h2 id="valuesTitle">Integrity.<br>Trust.<br>Loyalty.<br><em>Relationships.</em></h2>
+            <h2 id="valuesTitle"><span>Integrity. Trust.</span><span>Loyalty. <em>Relationships.</em></span></h2>
           </div>
           <div class="home-values__copy">
             <p>More than values — it’s how<br>we work, and who we build for.</p>
@@ -146,12 +147,12 @@
           <h2 id="peopleTitle">Experience.<br>Perspective.<br>People.</h2>
           <a class="text-link" href="#contact">Meet the team <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></a>
         </div>
-        <div class="people__portrait"><img id="teamPortrait" src="images/team-amy-schultz.png" alt="Portrait of Amy Schultz" loading="lazy"></div>
+        <div class="people__portrait"><img id="teamPortrait" src="images/team-adviser-02.png" alt="Portrait of Ina Sturino" loading="lazy"></div>
         <article class="people__profile" aria-live="polite">
           <span id="teamCounter">01 / 03</span>
-          <h3 id="teamName">Amy Schultz</h3>
-          <strong id="teamRole">Investment Specialist</strong>
-          <p id="teamBio">Bringing experienced market perspective and attentive personal service to every client relationship.</p>
+          <h3 id="teamName">Ina Sturino</h3>
+          <strong id="teamRole">Portfolio Strategy</strong>
+          <p id="teamBio">Focused on practical investment solutions, disciplined portfolio thinking and long-term client outcomes.</p>
           <div class="people__controls">
             <button id="teamPrev" type="button" aria-label="Previous team member"><i class="ti ti-arrow-left" aria-hidden="true"></i></button>
             <button id="teamNext" type="button" aria-label="Next team member"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
@@ -182,9 +183,6 @@
     <div class="footer__grid">
       <section class="footer__about" aria-label="About BP Bernstein">
         <a class="brand brand--footer" href="index.html" aria-label="BP Bernstein home"><span class="brand__name"><span>bp</span>bernstein</span><span class="brand__line">Member of the JSE</span></a>
-        <p>Established nearly 60 years ago, BP Bernstein is a member of the JSE Limited and one of the oldest independent stockbroking firms in South Africa.</p>
-        <p>Since the early 1950’s both private investors and institutions have relied on BP Bernstein to help them identify and capitalise on financial opportunities.</p>
-        <p class="footer__regulatory">BP Bernstein is a JSE member for Equities and Authorised JSE Investments, and an authorised Financial Services Provider (FSP 40810) for CFDs and offshore investments.</p>
       </section>
       <nav class="footer__links" aria-label="Useful links"><h2>Useful links</h2><a href="#about"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>About</a><a href="open-account.html"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Open an Account</a><a href="services.html"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Services</a><a href="#contact"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Ask an Expert</a><a href="https://secure.bpbernstein.co.za/" target="_blank" rel="noopener"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Portal</a><a href="#contact"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i>Contact</a></nav>
       <section class="footer__contact" aria-labelledby="contactTitle"><h2 id="contactTitle">Get in touch</h2><address><p><i class="ti ti-map-pin" aria-hidden="true"></i><span>Unit 7, 1 Parade on Kloof,<br>Bedfordview, Johannesburg,<br>South Africa</span></p><a href="tel:+27114793400"><i class="ti ti-phone" aria-hidden="true"></i><span>+27 (0) 11 479 3400</span></a><p><i class="ti ti-device-landline-phone" aria-hidden="true"></i><span>+27 (0) 11 479 3411</span></p><a href="mailto:amy@bpbernstein.co.za"><i class="ti ti-mail" aria-hidden="true"></i><span>amy@bpbernstein.co.za</span></a></address></section>
@@ -196,6 +194,6 @@
   <dialog class="account-dialog" id="accountDialog" aria-labelledby="dialogTitle">
     <button class="account-dialog__close" type="button" aria-label="Close enquiry"><i class="ti ti-x" aria-hidden="true"></i></button><p class="eyebrow">Start a conversation</p><h2 id="dialogTitle">Open an Account</h2><p>Leave your details and a BP Bernstein adviser will contact you.</p><form id="accountForm"><label for="accountName">Full name</label><input id="accountName" name="name" type="text" autocomplete="name" required><label for="accountEmail">Email address</label><input id="accountEmail" name="email" type="email" autocomplete="email" required><button class="button button--red" type="submit">Send enquiry <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button><p class="form-message" id="accountMessage" role="status" aria-live="polite"></p></form>
   </dialog>
-  <script src="js/home.js"></script>
+  <script src="js/home.js?v=20260820"></script>
 </body>
 </html>

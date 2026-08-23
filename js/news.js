@@ -6,7 +6,7 @@
   if (captureMode) document.documentElement.classList.add('qa-capture');
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const posts = [
+  let posts = [
     {
       id: 'independent-thinking-changing-markets',
       title: 'Independent thinking in changing markets',
@@ -141,6 +141,39 @@
     }
   ];
 
+  const managedNewsKey = 'bpb-news-cms-data-v1';
+  const escapeHtml = value => String(value || '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]);
+  const formatPublishedDate = value => {
+    if (!value) return 'Latest insight';
+    const date = new Date(`${value}T00:00:00`);
+    return Number.isNaN(date.getTime()) ? value : new Intl.DateTimeFormat('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+  };
+  const readManagedPosts = () => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(managedNewsKey));
+      return Array.isArray(saved?.articles) ? saved.articles : [];
+    } catch { return []; }
+  };
+  const managedPosts = readManagedPosts().map(article => {
+    const paragraphs = String(article.writeup || '').split(/\n\s*\n/).map(item => item.trim()).filter(Boolean);
+    const byline = [formatPublishedDate(article.date), article.author ? `By ${article.author}` : 'BP Bernstein'].filter(Boolean).join(' · ');
+    return {
+      id: article.id,
+      title: article.title,
+      category: article.category || 'News & Insights',
+      edition: byline,
+      image: article.image,
+      alt: article.alt || article.title,
+      excerpt: article.subtitle,
+      body: paragraphs,
+      author: article.author || 'BP Bernstein',
+      date: article.date,
+      managed: true,
+      createdAt: article.createdAt || article.date || ''
+    };
+  }).filter(post => post.id && post.title && post.image && post.excerpt && post.body.length);
+  posts = [...managedPosts.sort((a, b) => String(b.date || b.createdAt).localeCompare(String(a.date || a.createdAt))), ...posts];
+
   const categoryIcons = {
     'All News': 'ti-layout-list', 'Market Insights': 'ti-chart-line', 'Portfolio Strategy': 'ti-chart-pie',
     'Offshore Investing': 'ti-world', 'Investor Education': 'ti-school', Trading: 'ti-arrows-exchange',
@@ -204,10 +237,10 @@
     } else {
       newsList.innerHTML = visible.map((post, index) => `
         <article class="news-article" id="${post.id}" data-reveal data-delay="${index * 70}">
-          <a class="news-article__image" href="article.html?article=${encodeURIComponent(post.id)}" aria-label="Read ${post.title}"><img src="${post.image}" alt="${post.alt}" ${index ? 'loading="lazy"' : ''}></a>
+          <a class="news-article__image" href="article.html?article=${encodeURIComponent(post.id)}" aria-label="Read ${escapeHtml(post.title)}"><img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.alt)}" ${index ? 'loading="lazy"' : ''}></a>
           <div class="news-article__body">
-            <div class="news-article__meta"><span class="news-article__category">${post.category}</span><span>${post.edition}</span></div>
-            <h3>${post.title}</h3><p class="news-article__excerpt">${post.excerpt}</p>
+            <div class="news-article__meta"><span class="news-article__category">${escapeHtml(post.category)}</span><span>${escapeHtml(post.edition)}</span></div>
+            <h3>${escapeHtml(post.title)}</h3><p class="news-article__excerpt">${escapeHtml(post.excerpt)}</p>
             <a class="article-read" href="article.html?article=${encodeURIComponent(post.id)}">Read more <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></a>
           </div>
         </article>`).join('');

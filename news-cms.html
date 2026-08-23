@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#050505">
+  <title>News Manager | BP Bernstein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/news-cms.css">
+</head>
+<body>
+  <main class="cms-shell">
+    <header class="cms-header">
+      <a class="cms-brand" href="news.html" aria-label="Return to News"><span>bp</span>bernstein</a>
+      <p>Private content manager</p>
+    </header>
+
+    <section class="cms-intro" aria-labelledby="cmsTitle">
+      <p class="eyebrow">News &amp; insights</p>
+      <h1 id="cmsTitle">Manage published perspectives</h1>
+      <p>Create a news article, update a saved article, or remove an article from the archive. Added articles appear on the News page and open in the article reader in this browser.</p>
+    </section>
+
+    <div class="cms-layout">
+      <section class="cms-card" aria-labelledby="editorTitle">
+        <div class="cms-card__head"><div><p class="eyebrow">Article editor</p><h2 id="editorTitle">New article</h2></div><button class="button button--quiet" id="clearEditor" type="button">New article</button></div>
+        <form id="newsArticleForm">
+          <input id="articleId" name="articleId" type="hidden">
+          <label class="form-field form-field--wide" for="articleTitle"><span>Title</span><input id="articleTitle" name="title" type="text" maxlength="120" required></label>
+          <label class="form-field form-field--wide" for="articleSubtitle"><span>Subtitle / summary</span><textarea id="articleSubtitle" name="subtitle" rows="3" maxlength="280" required></textarea></label>
+          <label class="form-field" for="articleDateInput"><span>Date written</span><input id="articleDateInput" name="date" type="date" required></label>
+          <label class="form-field" for="articleAuthorInput"><span>Written by</span><input id="articleAuthorInput" name="author" type="text" maxlength="90" required></label>
+          <label class="form-field" for="articleCategory"><span>Category</span><input id="articleCategory" name="category" type="text" value="News &amp; Insights" maxlength="60"></label>
+          <label class="form-field" for="articleImage"><span>Cover image</span><input id="articleImage" name="image" type="file" accept="image/png,image/jpeg,image/webp"></label>
+          <label class="form-field form-field--wide" for="articleAlt"><span>Image description <small>Optional</small></span><input id="articleAlt" name="alt" type="text" maxlength="160" placeholder="Describe the image for screen-reader users"></label>
+          <div class="image-preview" id="imagePreview" hidden><img id="imagePreviewImage" alt="Selected article cover preview"><button id="removeImage" type="button">Remove image</button></div>
+          <label class="form-field form-field--wide" for="articleWriteup"><span>Article write-up</span><textarea id="articleWriteup" name="writeup" rows="14" placeholder="Write the article here. Leave a blank line between paragraphs." required></textarea></label>
+          <div class="form-actions"><button class="button button--red" type="submit">Save article</button><p id="cmsMessage" role="status" aria-live="polite"></p></div>
+        </form>
+      </section>
+
+      <aside class="cms-library" aria-labelledby="libraryTitle">
+        <div class="cms-library__head"><div><p class="eyebrow">Article library</p><h2 id="libraryTitle">Saved articles</h2></div><span id="articleCount">0 articles</span></div>
+        <div class="article-library" id="articleLibrary"></div>
+      </aside>
+    </div>
+
+    <aside class="cms-note"><strong>Local CMS</strong><p>This manager stores articles and uploaded images in this browser only. To publish the same updates for every visitor, connect the website to a hosted CMS or database before launch.</p></aside>
+  </main>
+  <script src="js/news-cms.js"></script>
+</body>
+</html>

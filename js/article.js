@@ -7,7 +7,7 @@
   if (captureMode) document.documentElement.classList.add('qa-capture');
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const posts = [
+  let posts = [
     {
       id:'independent-thinking-changing-markets',title:'Independent thinking in changing markets',category:'Market Insights',edition:'BP Bernstein perspective',image:'images/insight-johannesburg.png',alt:'Johannesburg financial district architecture',inlineImage:'images/insight-markets.png',inlineAlt:'Financial district reflected in a glass building',excerpt:'Market conditions change, but a clear view of risk, value and long-term objectives helps investors respond without losing perspective.',
       intro:['Markets rarely move in a straight line. A disciplined investment approach begins with understanding what has changed, what has not, and which decisions genuinely support an investor’s long-term objectives.','Independent thinking means assessing opportunities on their merits, considering both downside risk and potential return, and avoiding decisions driven only by short-term market noise.'],
@@ -61,6 +61,47 @@
     }
   ];
 
+  const managedNewsKey = 'bpb-news-cms-data-v1';
+  const escapeHtml = value => String(value || '').replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]);
+  const formatPublishedDate = value => {
+    if (!value) return '';
+    const date = new Date(`${value}T00:00:00`);
+    return Number.isNaN(date.getTime()) ? value : new Intl.DateTimeFormat('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+  };
+  const managedPosts = (() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(managedNewsKey));
+      return Array.isArray(saved?.articles) ? saved.articles : [];
+    } catch { return []; }
+  })().map(article => {
+    const paragraphs = String(article.writeup || '').split(/\n\s*\n/).map(item => item.trim()).filter(Boolean);
+    return {
+      id: article.id,
+      title: article.title,
+      category: article.category || 'News & Insights',
+      edition: article.subtitle,
+      image: article.image,
+      alt: article.alt || article.title,
+      inlineImage: article.image,
+      inlineAlt: article.alt || article.title,
+      excerpt: article.subtitle,
+      intro: paragraphs.slice(0, 2),
+      sectionTitle: article.subtitle,
+      section: paragraphs.slice(2),
+      points: [],
+      quote: '',
+      closingTitle: '',
+      closing: [],
+      source: 'news.html',
+      sourceLabel: 'View all news',
+      author: article.author || 'BP Bernstein',
+      date: article.date || '',
+      managed: true,
+      createdAt: article.createdAt || article.date || ''
+    };
+  }).filter(post => post.id && post.title && post.image && post.excerpt && post.intro.length);
+  posts = [...managedPosts.sort((a, b) => String(b.date || b.createdAt).localeCompare(String(a.date || a.createdAt))), ...posts];
+
   const requestedId = params.get('article');
   const post = posts.find(item => item.id === requestedId) || posts[0];
   if (requestedId !== post.id && !captureMode) history.replaceState(null, '', `article.html?article=${post.id}`);
@@ -84,9 +125,18 @@
   $('#articleTitle').textContent = post.title;
   $('#articleSummary').textContent = post.excerpt;
   $('#articleEdition').textContent = post.edition;
+  if (post.managed) {
+    $('#articleDate').textContent = formatPublishedDate(post.date);
+    $('#articleAuthor').textContent = `Written by ${post.author}`;
+    $('#articleDateMeta').hidden = !post.date;
+    $('#articleAuthorMeta').hidden = false;
+  }
   $('#readingTime').textContent = `${readingMinutes} min read`;
 
-  $('#articleBody').innerHTML = `
+  $('#articleBody').innerHTML = post.managed ? `
+    ${post.intro.map((paragraph, index) => `<p${index === 0 ? ' class="lead"' : ''}>${escapeHtml(paragraph)}</p>`).join('')}
+    ${post.section.length ? `<h2 data-reveal>${escapeHtml(post.sectionTitle)}</h2>${post.section.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('')}` : ''}
+  ` : `
     <p class="lead">${post.intro[0]}</p>
     <p>${post.intro[1]}</p>
     <figure data-reveal><img src="${post.inlineImage}" alt="${post.inlineAlt}" width="1200" height="720" loading="lazy"><figcaption>${post.inlineAlt}. BP Bernstein market perspective.</figcaption></figure>

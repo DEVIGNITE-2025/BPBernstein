@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#050505">
+  <title>AMC Figure Manager | BP Bernstein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/amc-cms.css">
+</head>
+<body>
+  <main class="cms-shell">
+    <header class="cms-header">
+      <a class="cms-brand" href="amc.html" aria-label="Return to the AMC page"><span>bp</span>bernstein</a>
+      <p>AMC content manager</p>
+    </header>
+
+    <section class="cms-card" aria-labelledby="cmsTitle">
+      <p class="eyebrow">AMC reporting data</p>
+      <h1 id="cmsTitle">Update performance and holdings</h1>
+      <p class="cms-intro">Enter the latest Fund and Benchmark returns, then maintain the published top 10 holdings and their portfolio weights. These figures update the AMC page in this browser.</p>
+
+      <form id="amcDataForm">
+        <label class="cms-date" for="cmsAsOf"><span>Reporting date <small>Optional</small></span><input id="cmsAsOf" name="asOf" type="text" placeholder="e.g. 31 March 2026"></label>
+
+        <fieldset class="cms-section">
+          <legend>Performance (%)</legend>
+          <div class="cms-performance-head"><span>Period</span><span>Fund</span><span>Benchmark</span></div>
+          <div class="cms-performance-row"><strong>6 months</strong><label><span class="sr-only">Fund return for 6 months</span><input name="sixMonthsFund" type="number" inputmode="decimal" step="0.01" required></label><label><span class="sr-only">Benchmark return for 6 months</span><input name="sixMonthsBenchmark" type="number" inputmode="decimal" step="0.01" required></label></div>
+          <div class="cms-performance-row"><strong>12 months</strong><label><span class="sr-only">Fund return for 12 months</span><input name="twelveMonthsFund" type="number" inputmode="decimal" step="0.01" required></label><label><span class="sr-only">Benchmark return for 12 months</span><input name="twelveMonthsBenchmark" type="number" inputmode="decimal" step="0.01" required></label></div>
+          <div class="cms-performance-row"><strong>Since inception</strong><label><span class="sr-only">Fund return since inception</span><input name="inceptionFund" type="number" inputmode="decimal" step="0.01" required></label><label><span class="sr-only">Benchmark return since inception</span><input name="inceptionBenchmark" type="number" inputmode="decimal" step="0.01" required></label></div>
+        </fieldset>
+
+        <fieldset class="cms-section">
+          <legend>Top 10 holdings (%)</legend>
+          <p class="cms-section__intro">Add the holding name and its current portfolio weight. Include Cash if it is among the published 10 positions.</p>
+          <div class="holdings-editor" id="holdingsEditor"></div>
+        </fieldset>
+        <button type="submit">Save AMC data</button>
+      </form>
+      <p class="cms-message" id="cmsMessage" role="status" aria-live="polite"></p>
+    </section>
+
+    <aside class="cms-note">
+      <strong>Local CMS</strong>
+      <p>This static-site manager saves values only in this browser. Publishing shared values for all visitors will require a connected CMS or database.</p>
+    </aside>
+  </main>
+  <script src="js/amc-cms.js?v=20260823"></script>
+</body>
+</html>

@@ -71,7 +71,7 @@
     }
   };
 
-  let selectedAccount = 'pty';
+  let selectedAccount = 'individual';
   const accountButtons = [...document.querySelectorAll('[data-account]')];
   const requirementName = document.querySelector('#requirementName');
   const requirementIntro = document.querySelector('#requirementIntro');
@@ -94,6 +94,31 @@
     if (shouldScroll) document.querySelector('#requirements').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
   };
   accountButtons.forEach(button => button.addEventListener('click', () => renderAccount(button.dataset.account, Boolean(button.closest('.account-types')))));
+
+  const explorerButtons = [...document.querySelectorAll('[data-account-explorer]')];
+  const explorerName = document.querySelector('#explorerAccountName');
+  const explorerIntro = document.querySelector('#explorerAccountIntro');
+  const explorerList = document.querySelector('#explorerAccountList');
+  const explorerPanel = document.querySelector('.account-types-explorer__panel');
+  const renderExplorer = key => {
+    const account = accountData[key];
+    if (!account || !explorerPanel) return;
+    explorerButtons.forEach(button => {
+      const active = button.dataset.accountExplorer === key;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    explorerName.textContent = account.label;
+    explorerIntro.textContent = account.intro;
+    explorerList.innerHTML = account.items.map(item => `<li><i class="ti ti-circle-check" aria-hidden="true"></i>${item}</li>`).join('');
+    if (!reduceMotion) explorerPanel.animate([{ opacity:.5, transform:'translateY(7px)' }, { opacity:1, transform:'translateY(0)' }], { duration:260, easing:'cubic-bezier(.22,1,.36,1)' });
+  };
+  explorerButtons.forEach(button => button.addEventListener('click', () => {
+    const key = button.dataset.accountExplorer;
+    renderAccount(key);
+    renderExplorer(key);
+  }));
+  renderExplorer(selectedAccount);
 
   const dialog = document.querySelector('#advisorDialog');
   let dialogTrigger = null;

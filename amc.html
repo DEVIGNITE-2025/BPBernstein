@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/amc.css">
   <link rel="stylesheet" href="css/theme.css">
 </head>
-<body>
+<body class="amc-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <div class="page-loader" id="pageLoader" aria-hidden="true">
@@ -31,10 +31,8 @@
       <a href="services.html">Services</a>
       <a class="is-active" href="amc.html" aria-current="page">AMC</a>
       <a href="open-account.html">Open an Account</a>
-      <a href="legal.html">Legal</a>
-      <a href="disclaimer.html">Disclaimer</a>
       <a href="news.html">News</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <button class="button button--red button--header magnetic" type="button" data-open-dialog>Speak to an advisor</button>
     <button class="menu-toggle" id="menuToggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
@@ -55,10 +53,8 @@
       <a href="services.html"><span>02</span> Services</a>
       <a class="is-active" href="amc.html" aria-current="page"><span>03</span> AMC</a>
       <a href="open-account.html"><span>04</span> Open an Account</a>
-      <a href="legal.html"><span>05</span> Legal</a>
-      <a href="disclaimer.html"><span>06</span> Disclaimer</a>
-      <a href="news.html"><span>07</span> News</a>
-      <a href="#contact"><span>08</span> Contact</a>
+      <a href="news.html"><span>05</span> News</a>
+      <a href="contact.html"><span>06</span> Contact</a>
     </nav>
     <button class="button button--red" type="button" data-open-dialog>Speak to an advisor <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button>
   </aside>
@@ -81,28 +77,6 @@
           </div>
         </div>
 
-        <article class="market-panel" aria-label="Illustrative AMC strategy dashboard">
-          <header class="market-panel__header">
-            <strong>BPB AMC</strong>
-            <span><i></i> Illustrative overview</span>
-          </header>
-          <div class="market-panel__performance">
-            <div><span>Strategy framework</span><strong>Active oversight</strong><small>Illustrative visual — not performance data</small></div>
-            <canvas id="heroChart" width="330" height="92" aria-label="Illustrative strategy line chart"></canvas>
-          </div>
-          <div class="allocation" aria-label="Illustrative asset categories">
-            <strong>Portfolio building blocks</strong>
-            <div><span>Equity</span><i><b style="--allocation:.72"></b></i></div>
-            <div><span>Preference Shares</span><i><b style="--allocation:.46"></b></i></div>
-            <div><span>Cash &amp; Income</span><i><b style="--allocation:.31"></b></i></div>
-            <div><span>Alternatives</span><i><b style="--allocation:.18"></b></i></div>
-          </div>
-          <dl class="market-panel__metrics">
-            <div><dt>Research</dt><dd>Led</dd></div>
-            <div><dt>Risk</dt><dd>Managed</dd></div>
-            <div><dt>Active</dt><dd>Management</dd></div>
-          </dl>
-        </article>
       </div>
 
       <div class="trust-strip" aria-label="AMC trust indicators">
@@ -169,7 +143,7 @@
 
     <section class="approach" aria-labelledby="approachTitle">
       <div class="section-shell approach__grid">
-        <div>
+        <div class="approach-overview">
           <p class="eyebrow reveal">How we invest</p>
           <h2 class="reveal" id="approachTitle">Our investment approach</h2>
           <ol class="process">
@@ -179,12 +153,31 @@
             <li class="reveal" data-delay="510"><span>04</span><i class="ti ti-shield-check" aria-hidden="true"></i><h3>Risk Review</h3><p>We review exposure to protect capital and support long-term outcomes.</p></li>
           </ol>
         </div>
-        <article class="growth-chart reveal">
-          <h3>Long-term growth through active management</h3>
-          <div class="growth-chart__legend"><span><i></i> Active strategy</span><span><i></i> Market benchmark</span></div>
-          <canvas id="growthChart" width="520" height="220" aria-label="Illustrative comparison of an active strategy and market benchmark"></canvas>
-          <p>Illustrative visual only. Not actual performance data. Past performance is not indicative of future results.</p>
-        </article>
+
+        <div class="approach-data-grid">
+          <article class="performance-card reveal" aria-labelledby="performanceTitle">
+            <div class="performance-card__header">
+              <p class="eyebrow">Performance snapshot</p>
+              <h3 id="performanceTitle">Fund performance</h3>
+              <p>Fund and benchmark returns across the current reporting periods.</p>
+            </div>
+            <div class="performance-legend" aria-label="Performance legend"><span><i aria-hidden="true"></i>Fund</span><span><i aria-hidden="true"></i>Benchmark</span></div>
+            <div class="performance-table" role="table" aria-label="AMC performance comparison">
+              <div role="row" class="performance-table__head"><span role="columnheader">Period</span><span role="columnheader">Fund</span><span role="columnheader">Benchmark</span></div>
+              <div role="row"><span role="cell">6 months</span><strong role="cell" data-performance-output="sixMonths-fund">24.03%</strong><b role="cell" data-performance-output="sixMonths-benchmark">-1.64%</b></div>
+              <div role="row"><span role="cell">12 months</span><strong role="cell" data-performance-output="twelveMonths-fund">40.87%</strong><b role="cell" data-performance-output="twelveMonths-benchmark">11.91%</b></div>
+              <div role="row"><span role="cell">Since inception</span><strong role="cell" data-performance-output="inception-fund">127.00%</strong><b role="cell" data-performance-output="inception-benchmark">54.12%</b></div>
+            </div>
+            <canvas id="performanceChart" width="520" height="195" aria-label="Fund and benchmark performance comparison chart"></canvas>
+            <div class="performance-chart__labels" aria-hidden="true"><span>6M</span><span>12M</span><span>Since inception</span></div>
+            <p class="performance-card__note"><span data-performance-date>Latest published figures</span> · Managed from the private AMC CMS page.</p>
+          </article>
+
+          <article class="holdings-card reveal" aria-labelledby="holdingsTitle" data-delay="140">
+            <div class="holdings-card__header"><p class="eyebrow">Portfolio composition</p><h3 id="holdingsTitle">Top 10 holdings</h3><span data-holdings-date>Latest published allocation</span></div>
+            <ol class="holdings-list" id="holdingsList" aria-label="Top 10 holdings by portfolio weight"></ol>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -227,11 +220,11 @@
       <section class="footer__about" aria-label="About BP Bernstein">
         <a class="brand brand--footer" href="index.html" aria-label="BP Bernstein home"><span class="brand__name"><span>bp</span>bernstein</span><span class="brand__line">Member of the JSE</span></a>
       </section>
-      <nav class="footer__links" aria-label="Useful links"><h2>Useful links</h2><a href="index.html">About</a><a href="open-account.html">Open an Account</a><a href="services.html">Services</a><a href="#contact">Ask an Expert</a><a href="https://secure.bpbernstein.co.za/" target="_blank" rel="noopener">Portal</a><a href="#contact">Contact</a></nav>
+      <nav class="footer__links" aria-label="Useful links"><h2>Useful links</h2><a href="index.html">About</a><a href="open-account.html">Open an Account</a><a href="services.html">Services</a><a href="contact.html">Ask an Expert</a><a href="https://secure.bpbernstein.co.za/" target="_blank" rel="noopener">Portal</a><a href="contact.html">Contact</a></nav>
       <section class="footer__contact" aria-labelledby="contactTitle"><h2 id="contactTitle">Get in touch</h2><address><p><i class="ti ti-map-pin" aria-hidden="true"></i><span>Unit 7, 1 Parade on Kloof,<br>Bedfordview, Johannesburg,<br>South Africa</span></p><a href="tel:+27114793400"><i class="ti ti-phone" aria-hidden="true"></i>+27 (0) 11 479 3400</a><p><i class="ti ti-device-landline-phone" aria-hidden="true"></i>+27 (0) 11 479 3411</p><a href="mailto:amy@bpbernstein.co.za"><i class="ti ti-mail" aria-hidden="true"></i>amy@bpbernstein.co.za</a></address></section>
       <section class="newsletter" aria-labelledby="newsletterTitle"><h2 id="newsletterTitle">Newsletter</h2><p>Signup for our latest insights.</p><form id="newsletterForm" novalidate><label class="sr-only" for="newsletterEmail">Email address</label><input id="newsletterEmail" name="email" type="email" autocomplete="email" placeholder="Enter your email address" required><button type="submit" aria-label="Subscribe to newsletter"><i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button></form><p class="form-message" id="newsletterMessage" role="status" aria-live="polite"></p><div class="socials" aria-label="Social media"><a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a><a href="#" aria-label="X / Twitter"><i class="ti ti-brand-x" aria-hidden="true"></i></a><a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a></div></section>
     </div>
-    <div class="footer__bottom" id="legal"><p>Copyright © 2022 BP Bernstein. All Rights Reserved</p><nav aria-label="Legal links"><a href="disclaimer.html">Disclaimer</a><a href="legal.html#documents">Terms &amp; Conditions</a><a href="https://www.bpbernstein.co.za/uploads/bp-bernstein-privacy-statement.pdf" target="_blank" rel="noopener">Privacy Policy</a></nav></div>
+    <div class="footer__bottom" id="legal"><p>Copyright © 2022 BP Bernstein. All Rights Reserved</p><nav aria-label="Legal links"><a href="legal.html">Legal</a><a href="disclaimer.html">Disclaimer</a><a href="legal.html#documents">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a></nav></div>
   </footer>
 
   <dialog class="account-dialog" id="accountDialog" aria-labelledby="dialogTitle">
@@ -239,6 +232,6 @@
     <p class="eyebrow">Start a conversation</p><h2 id="dialogTitle">Speak to an advisor</h2><p>Leave your details and a BP Bernstein adviser will contact you.</p>
     <form id="accountForm"><label for="accountName">Full name</label><input id="accountName" name="name" type="text" autocomplete="name" required><label for="accountEmail">Email address</label><input id="accountEmail" name="email" type="email" autocomplete="email" required><button class="button button--red" type="submit">Send enquiry <i class="ti ti-arrow-narrow-right" aria-hidden="true"></i></button><p class="form-message" id="accountMessage" role="status" aria-live="polite"></p></form>
   </dialog>
-  <script src="js/amc.js"></script>
+  <script src="js/amc.js?v=20260823"></script>
 </body>
 </html>

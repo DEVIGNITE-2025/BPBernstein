@@ -131,9 +131,111 @@
 
   const heroCanvas = document.querySelector('#heroChart');
   const heroSeries = [17,20,19,25,23,29,33,31,38,43,41,48,55,51,58,64,61,69,77,74,82,91,89,96];
-  const growthCanvas = document.querySelector('#growthChart');
-  const activeSeries = [22,25,30,29,34,39,44,42,49,54,59,63,61,69,74,81,78,86,93,99,106,104,113,121,129,126,138,147];
-  const benchmarkSeries = [21,23,25,28,30,33,35,34,37,40,44,46,45,49,52,55,53,58,61,64,68,66,71,75,79,81,84,88];
+  const performanceCanvas = document.querySelector('#performanceChart');
+  const performanceStorageKey = 'bpb-amc-performance-data';
+  const defaultPerformanceData = {
+    asOf: '',
+    performance: {
+      sixMonths: { fund: 24.03, benchmark: -1.64 },
+      twelveMonths: { fund: 40.87, benchmark: 11.91 },
+      inception: { fund: 127, benchmark: 54.12 }
+    },
+    holdings: [
+      { name: 'Reinet Investments SCA', weight: 6.20 },
+      { name: 'Pick n Pay Stores Ltd', weight: 4.57 },
+      { name: 'Prosus NV', weight: 3.75 },
+      { name: 'Tesla Inc', weight: 3.03 },
+      { name: 'Sasol Limited', weight: 2.69 },
+      { name: 'iShares 20+ Year Treasury Bond ETF', weight: 2.67 },
+      { name: 'AdvisorShares Pure US Cannabis ETF', weight: 2.06 },
+      { name: 'Alibaba Group Holdings Limited', weight: 1.98 },
+      { name: 'KraneShares CSI China Internet ETF', weight: 1.85 },
+      { name: 'Cash', weight: 30.48 }
+    ]
+  };
+  const readPerformanceData = () => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(performanceStorageKey));
+      if (!saved || typeof saved !== 'object') return defaultPerformanceData;
+      return {
+        ...defaultPerformanceData,
+        ...saved,
+        performance: {
+          ...defaultPerformanceData.performance,
+          ...(saved.performance || {})
+        },
+        holdings: Array.isArray(saved.holdings) && saved.holdings.length ? saved.holdings : defaultPerformanceData.holdings
+      };
+    } catch {
+      return defaultPerformanceData;
+    }
+  };
+  const formatPerformanceValue = value => `${(Number(value) || 0).toFixed(2)}%`;
+  const escapeHtml = value => String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
+  const updatePerformanceOutputs = data => {
+    document.querySelectorAll('[data-performance-output]').forEach(output => {
+      const [period, series] = output.dataset.performanceOutput.split('-');
+      output.textContent = formatPerformanceValue(data.performance[period]?.[series]);
+    });
+    const dateLabel = data.asOf ? `As at ${data.asOf}` : 'Latest published figures';
+    document.querySelectorAll('[data-performance-date], [data-holdings-date]').forEach(output => { output.textContent = dateLabel; });
+  };
+  const renderHoldings = holdings => {
+    const list = document.querySelector('#holdingsList');
+    if (!list) return;
+    const highestWeight = Math.max(1, ...holdings.map(item => Math.abs(Number(item.weight) || 0)));
+    list.innerHTML = holdings.map((holding, index) => {
+      const weight = Number(holding.weight) || 0;
+      const width = Math.max(0, Math.min(100, weight / highestWeight * 100));
+      return `<li><span class="holding-rank">${String(index + 1).padStart(2, '0')}</span><span class="holding-name">${escapeHtml(holding.name || 'Holding')}</span><span class="holding-weight">${formatPerformanceValue(weight)}</span><i aria-hidden="true" style="--allocation:${width}%"></i></li>`;
+    }).join('');
+  };
+  const drawPerformanceChart = (canvas, data) => {
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const ratio = Math.min(devicePixelRatio || 1, 2);
+    const width = Math.max(1, rect.width);
+    const height = Math.max(1, rect.height);
+    if (canvas.width !== Math.round(width * ratio) || canvas.height !== Math.round(height * ratio)) {
+      canvas.width = Math.round(width * ratio);
+      canvas.height = Math.round(height * ratio);
+    }
+    const context = canvas.getContext('2d');
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    context.clearRect(0, 0, width, height);
+    const periods = ['sixMonths', 'twelveMonths', 'inception'];
+    const values = periods.flatMap(period => [Number(data.performance[period]?.fund) || 0, Number(data.performance[period]?.benchmark) || 0]);
+    const minimum = Math.min(-5, ...values);
+    const maximum = Math.max(5, ...values);
+    const padding = Math.max(8, (maximum - minimum) * .12);
+    const lower = minimum - padding;
+    const upper = maximum + padding;
+    const chartHeight = height - 18;
+    const scaleY = value => height - 9 - ((value - lower) / Math.max(1, upper - lower)) * chartHeight;
+    context.strokeStyle = 'rgba(255,255,255,.12)';
+    context.lineWidth = 1;
+    for (let index = 1; index < 5; index += 1) {
+      const y = height * index / 5;
+      context.beginPath(); context.moveTo(0, y); context.lineTo(width, y); context.stroke();
+    }
+    const baseline = scaleY(0);
+    context.strokeStyle = 'rgba(255,255,255,.38)';
+    context.beginPath(); context.moveTo(0, baseline); context.lineTo(width, baseline); context.stroke();
+    const groupWidth = width / periods.length;
+    const barWidth = Math.min(25, groupWidth * .22);
+    periods.forEach((period, index) => {
+      const centre = groupWidth * index + groupWidth / 2;
+      [
+        { value: Number(data.performance[period]?.fund) || 0, color: '#df1f2d' },
+        { value: Number(data.performance[period]?.benchmark) || 0, color: '#ffffff' }
+      ].forEach((series, seriesIndex) => {
+        const y = scaleY(series.value);
+        const x = centre + (seriesIndex === 0 ? -barWidth - 3 : 3);
+        context.fillStyle = series.color;
+        context.fillRect(x, Math.min(y, baseline), barWidth, Math.max(1, Math.abs(baseline - y)));
+      });
+    });
+  };
   const animateChart = (canvas, primary, comparison) => {
     if (reduceMotion) { drawLineChart(canvas, primary, comparison, 1); return; }
     const start = performance.now();
@@ -145,19 +247,28 @@
     requestAnimationFrame(frame);
   };
   window.setTimeout(() => animateChart(heroCanvas, heroSeries), reduceMotion ? 0 : 1700);
-  if ('IntersectionObserver' in window) {
+  const renderPerformanceData = () => {
+    const performanceData = readPerformanceData();
+    updatePerformanceOutputs(performanceData);
+    renderHoldings(performanceData.holdings);
+    drawPerformanceChart(performanceCanvas, performanceData);
+  };
+  if ('IntersectionObserver' in window && performanceCanvas) {
     const chartObserver = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      animateChart(growthCanvas, activeSeries, benchmarkSeries);
+      renderPerformanceData();
       chartObserver.disconnect();
     }), { threshold: .25 });
-    chartObserver.observe(growthCanvas);
+    chartObserver.observe(performanceCanvas);
   } else {
-    animateChart(growthCanvas, activeSeries, benchmarkSeries);
+    renderPerformanceData();
   }
   addEventListener('resize', () => {
     drawLineChart(heroCanvas, heroSeries, null, 1);
-    drawLineChart(growthCanvas, activeSeries, benchmarkSeries, 1);
+    renderPerformanceData();
+  });
+  addEventListener('storage', event => {
+    if (event.key === performanceStorageKey) renderPerformanceData();
   });
 
   if (!reduceMotion && innerWidth > 780) {
@@ -172,7 +283,7 @@
         const x = (event.clientX / innerWidth - .5);
         const y = (event.clientY / innerHeight - .5);
         heroImage.style.transform = `translate3d(${x * -8}px,${y * -6}px,0) scale(1.01)`;
-        marketPanel.style.transform = `translate3d(${x * 5}px,${y * 4}px,0)`;
+        if (marketPanel) marketPanel.style.transform = `translate3d(${x * 5}px,${y * 4}px,0)`;
         framePending = false;
       });
     }, { passive: true });

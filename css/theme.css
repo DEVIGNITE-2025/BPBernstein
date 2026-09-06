@@ -425,6 +425,10 @@ h1, h2, h3, h4, h5, h6 {
 .service-tab.is-active .service-tab__label { color: var(--red); }
 .service-tab.is-active .service-tab__number,
 .service-tab.is-active i { color: var(--red); }
+@media (min-width: 781px) {
+  .service-selector,
+  .service-panel { height: 510px; }
+}
 .approach {
   background: #050505;
   color: #fff;

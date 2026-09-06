@@ -15,12 +15,12 @@
     {
       id: 1,
       title: 'Equity Trading',
-      description: 'We provide direct market access to local and global equity markets. Our experienced dealers and research team deliver insight, execution and support to help you make informed decisions.',
+      description: 'Equity trading lets investors buy and sell securities in listed public companies. BP Bernstein’s team can help you consider market access, execution and the risks that form part of investing in shares.',
       benefits: [
-        'Direct access to the JSE and major global markets',
-        'Specialist research and sector insight',
-        'Competitive pricing and execution',
-        'Personalised dealing and relationship support'
+        'JSE-listed equity market access',
+        'Personal dealing support',
+        'A choice of account and service approach',
+        'Considered execution aligned to your instruction'
       ],
       image: 'images/equity-trading.png',
       alt: 'Professional institutional equity trading workstation'
@@ -28,12 +28,12 @@
     {
       id: 2,
       title: 'CFD Trading',
-      description: 'Access flexible market exposure through contracts for difference, supported by experienced dealers who understand the importance of disciplined execution and risk awareness.',
+      description: 'Contracts for difference are geared instruments that can provide exposure to selected markets. They carry material risk: margin calls may require additional funds and positions can be closed when requirements are not met.',
       benefits: [
-        'Exposure to local and international shares',
-        'Long and short trading opportunities',
-        'Transparent margin and risk management support',
-        'Responsive access to an experienced dealing team'
+        'Exposure through a derivative instrument',
+        'Long and short market positions may be available',
+        'Stop and limit orders can help manage instructions',
+        'Discuss suitability and margin risk before trading'
       ],
       image: 'images/insight-markets.png',
       alt: 'Contemporary financial district reflected in a glass building'
@@ -41,12 +41,12 @@
     {
       id: 3,
       title: 'Offshore Investments',
-      description: 'Diversify beyond South Africa with considered access to international markets, global opportunities and specialist guidance aligned to your investment objectives.',
+      description: 'BP Bernstein’s published service material includes offshore investments for investors seeking international market exposure. The appropriate structure, investment universe and cross-border requirements should be confirmed with the team.',
       benefits: [
-        'Access to established international markets',
-        'Broader geographic and currency diversification',
-        'Research-led investment opportunities',
-        'Personal assistance with offshore execution'
+        'International-market access, subject to availability',
+        'Geographic and currency diversification considerations',
+        'Guidance on the relevant account structure',
+        'Cross-border and tax requirements to be confirmed'
       ],
       image: 'images/insight-offshore.png',
       alt: 'Cape Town and Table Mountain viewed across the Atlantic coast'
@@ -54,12 +54,12 @@
     {
       id: 4,
       title: 'ETN’s',
-      description: 'Exchange-traded notes offer targeted market exposure in a transparent listed structure, helping investors express a specific view across selected assets and themes.',
+      description: 'Exchange-traded notes are listed instruments that can provide targeted exposure to a referenced market, index or strategy. Before trading, consider how the instrument works, its issuer risk and whether it suits your objectives.',
       benefits: [
-        'Convenient exchange-traded access',
-        'Exposure to selected indices and asset classes',
-        'Transparent market pricing',
-        'Guidance from our specialist dealing team'
+        'Listed-instrument market access',
+        'Exposure linked to a defined reference',
+        'Pricing available through the market',
+        'Suitability and issuer risk require consideration'
       ],
       image: 'images/services-architecture.png',
       alt: 'Dark institutional glass architecture with red market reflections'
@@ -67,12 +67,12 @@
     {
       id: 5,
       title: 'ETF’s',
-      description: 'Build efficient, diversified market exposure with exchange-traded funds selected to complement your broader portfolio strategy and long-term objectives.',
+      description: 'Exchange-traded funds can offer a practical way to access a diversified basket of securities through a listed instrument. Their holdings, fees and tracking approach should be reviewed in the fund documentation before investing.',
       benefits: [
-        'Cost-efficient diversified exposure',
-        'Access to local and global indices',
-        'Transparent daily pricing and liquidity',
-        'Portfolio support tailored to your objectives'
+        'Access to a basket of underlying securities',
+        'Local and global market exposure may be available',
+        'Listed pricing and liquidity considerations',
+        'Review fund documentation before investing'
       ],
       image: 'images/hero-johannesburg.png',
       alt: 'Johannesburg skyline and bridge at sunrise'
@@ -80,15 +80,28 @@
     {
       id: 6,
       title: 'Satrix',
-      description: 'Access a broad range of index-tracking investments through the Satrix platform, with straightforward execution and personal support from BP Bernstein.',
+      description: 'BP Bernstein’s service material lists Satrix among its exchange-traded investment offerings. Speak to the team about the available instruments and how index-tracking exposure could fit your broader portfolio.',
       benefits: [
-        'Wide selection of index-tracking products',
-        'Simple access through a trusted platform',
-        'Flexible portfolio-building options',
-        'Personal assistance when you need it'
+        'Index-tracking investment exposure',
+        'Listed products available through the market',
+        'Portfolio-building considerations',
+        'Confirm current instruments before dealing'
       ],
       image: 'images/insight-johannesburg.png',
       alt: 'Johannesburg city architecture in warm afternoon light'
+    },
+    {
+      id: 7,
+      title: 'Structured Products',
+      description: 'Structured Products appear in BP Bernstein’s published legacy service list. Availability, product terms and suitability must be confirmed directly with the team before any investment decision is made.',
+      benefits: [
+        'Legacy BP Bernstein service offering',
+        'Availability must be confirmed before dealing',
+        'Terms, risks and issuer exposure vary by product',
+        'Speak to an adviser for the current product range'
+      ],
+      image: 'images/services-architecture.png',
+      alt: 'Contemporary institutional architecture with reflective glass'
     }
   ];
 

@@ -26,48 +26,48 @@
   const accountData = {
     pty: {
       label: '(Pty) Ltd',
-      intro: 'BP Bernstein will confirm the current company account mandate and supporting-document requirements before submission.',
-      items: ['Confirm the company details and authorised representatives.','Request the current account mandate and document checklist.','Prepare the identity and entity information requested by the team.','Discuss any signing or authority requirements before submission.']
+      intro: 'For a company account, prepare the company records and authority documents alongside the application mandate.',
+      items: ['A resolution naming the authorised director, signed by each director.','The mandate, initialled and signed by the authorised director.','Certified identity documents for the CEO and all directors.','Proof of residence (not older than three months) for the CEO and directors holding 25% or more.','Company registered-address records, directors list, incorporation certificate and business letterhead.','A certified company bank statement or bank letter, plus a SARS document confirming the company tax number.']
     },
     cc: {
       label: 'Close Corporation (CC)',
-      intro: 'The team will provide the current Close Corporation mandate and confirm the information required for members and authorised representatives.',
-      items: ['Confirm the registered Close Corporation details.','Identify members and authorised representatives.','Request the current account-specific mandate and checklist.','Confirm signing authority with BP Bernstein before submission.']
+      intro: 'A Close Corporation application needs evidence of the authorised member, the CC’s registration and its banking and tax details.',
+      items: ['A proxy or resolution naming the member authorised to instruct on the account, signed by each member.','The mandate, initialled and signed by the authorised member.','Certified ID and proof of residence (not older than three months) for the authorised person.','Certified CK1 and CK2 records, plus a certified utility bill for the CC physical address.','CC letterhead reflecting the business address.','A certified CC bank statement or bank letter, plus a SARS document confirming the CC tax number.']
     },
     minor: {
       label: 'Minor',
-      intro: 'A BP Bernstein representative will explain the available structure and the documentation required for a minor account.',
-      items: ['Discuss the intended account structure with an adviser.','Confirm the responsible adult or representative details.','Request the current mandate and supporting-document checklist.','Submit only once the team has confirmed the required information.']
+      intro: 'The account is opened in the minor’s name and the guardian signs the mandate in that capacity.',
+      items: ['The mandate in the minor’s name, initialled and signed by the guardian as father, mother or guardian.','A certified copy of the minor’s birth certificate.','Certified ID and proof of residence (not older than three months) for the guardian.','A declaration that the minor resides with the guardian.','A certified bank statement or bank letter confirming banking details.','A SARS document confirming the parent or guardian tax number.']
     },
     joint: {
       label: 'Joint Account',
-      intro: 'BP Bernstein will confirm the current joint-account mandate and the information required from each applicant.',
-      items: ['Confirm all intended account holders.','Request the current joint-account mandate.','Prepare the information requested for each applicant.','Agree the signing and instruction arrangements before submission.']
+      intro: 'BP Bernstein lists joint accounts as an available structure, but its public material does not publish a complete current checklist for this option.',
+      items: ['Confirm every intended account holder and the preferred instruction arrangement.','Request the current joint-account mandate directly from BP Bernstein.','Ask the team to confirm the certified identity, address, banking and tax documents required from each holder.','Do not submit documents until the account-opening team confirms the current pack.']
     },
     trust: {
       label: 'Trust',
-      intro: 'The current trust mandate and supporting requirements are issued directly after the trust structure and authorised representatives are confirmed.',
-      items: ['Confirm the trust details and authorised representatives.','Request the current trust mandate and checklist.','Prepare the trust and representative information requested.','Discuss authority and signing requirements with the team.']
+      intro: 'Trust applications require trustee authority, trust formation records and verification documents for the parties involved.',
+      items: ['A proxy resolution naming the trustee authorised to instruct on the account, signed by all trustees.','The mandate, initialled and signed by the authorised trustee.','Certified IDs and proof of residence for trustees and beneficiaries, plus proof of the trust registered address.','The trust deed, Master of the High Court authorisation and the trust will with named beneficiaries.','A certified trust bank statement or bank letter confirming banking details.','A SARS document confirming the trust tax number.']
     },
     foreign: {
       label: 'Foreign Company',
-      intro: 'Foreign-company applications require account-specific guidance from BP Bernstein before documentation is prepared.',
-      items: ['Confirm the entity jurisdiction and authorised representatives.','Request the current foreign-company requirements.','Prepare the company and representative information requested.','Discuss submission and document-format requirements directly.']
+      intro: 'BP Bernstein lists foreign companies as an available structure, but its public material does not publish a complete current checklist for this option.',
+      items: ['Confirm the country of incorporation and the authorised representatives.','Request the current foreign-company mandate and checklist directly from BP Bernstein.','Ask the team to confirm certification, translation, authority and tax-document requirements.','Agree the submission method before preparing or sending documents.']
     },
     individual: {
       label: 'SA Individual',
-      intro: 'BP Bernstein will provide the current individual mandate and confirm the supporting information required for an SA Individual account.',
-      items: ['Confirm your preferred service and account structure.','Request the current individual mandate and checklist.','Prepare the identity and supporting information requested.','Contact the team before submitting the completed pack.']
+      intro: 'For a South African individual account, prepare the signed mandate and the core identity, address, banking and tax records.',
+      items: ['The mandate, initialled and signed.','A certified copy of your South African ID.','Certified proof of residence, not older than three months.','A certified bank statement or bank letter confirming your banking details.','A SARS-issued document confirming your tax number.','If the proof of residence is not in your name, ask BP Bernstein for its residential-address declaration process.']
     },
     nonresident: {
       label: 'Non Resident of SA Individual',
-      intro: 'A representative will confirm the current requirements for a non-resident individual before issuing the applicable mandate pack.',
-      items: ['Confirm your residency and contact details with the team.','Request the current non-resident mandate and checklist.','Prepare the information and document formats requested.','Discuss submission requirements directly with BP Bernstein.']
+      intro: 'A non-resident individual application uses the relevant mandate with passport, address, banking and applicable tax-residency records.',
+      items: ['The mandate, initialled and signed.','A certified copy of your passport.','Certified proof of residence, not older than three months.','A certified bank statement or bank letter confirming banking details.','A foreign income-tax document confirming your tax number, where applicable.','Confirm any cross-border, certification or tax-residency requirements with the account-opening team.']
     },
     club: {
       label: 'Non Legal Entity / Club',
-      intro: 'BP Bernstein will first confirm whether the intended structure is appropriate and then issue the relevant current guidance.',
-      items: ['Explain the club or non-legal entity structure.','Confirm authorised representatives and intended operation.','Request the current mandate and supporting-document checklist.','Discuss authority and submission requirements before applying.']
+      intro: 'A club or non-legal entity needs documented authority, its formation agreement and records for the nominated account holder.',
+      items: ['A proxy resolution naming the authorised person and signed by all beneficiaries or members.','The mandate, initialled and signed by the authorised person.','Certified IDs for beneficiaries or members, and certified proof of residence for the nominated person.','The formation agreement, signed by all beneficiaries or members.','A certified bank statement or bank letter for the nominated account.','A SARS document confirming the nominated person’s tax number.']
     }
   };
 
